@@ -1,0 +1,31 @@
+{
+    "configurations": [
+        {
+            "name": "Linux",
+            "includePath": [
+                "${default}",
+                "/usr/include/**",
+                "/usr/include/pqxx/**",
+                "/usr/include/postgresql/**",
+                "/run/media/nonunknown/3a1f3657-ce4a-4ffa-8f65-f41e1dfcaf68/godot-cpp/src/**",
+                "/run/media/nonunknown/3a1f3657-ce4a-4ffa-8f65-f41e1dfcaf68/godot-cpp/godot-headers/**",
+                "/run/media/nonunknown/3a1f3657-ce4a-4ffa-8f65-f41e1dfcaf68/godot-cpp/gen/include/godot_cpp/**",
+                "/usr/include/libpq/**",
+                "${workspaceFolder}/**",
+                "/run/media/nonunknown/3a1f3657-ce4a-4ffa-8f65-f41e1dfcaf68/godot-cpp/gen/include/**",
+                "/run/media/nonunknown/3a1f3657-ce4a-4ffa-8f65-f41e1dfcaf68/godot-cpp/gen/src/**",
+                "/run/media/nonunknown/3a1f3657-ce4a-4ffa-8f65-f41e1dfcaf68/godot-cpp/include/godot_cpp/core/**",
+                "/run/media/nonunknown/3a1f3657-ce4a-4ffa-8f65-f41e1dfcaf68/godot-cpp/include",
+                "/run/media/nonunknown/3a1f3657-ce4a-4ffa-8f65-f41e1dfcaf68/godot-cpp/**",
+                "/run/media/nonunknown/3a1f3657-ce4a-4ffa-8f65-f41e1dfcaf68/godot-cpp/include/godot_cpp/classes/**",
+                "/run/media/nonunknown/3a1f3657-ce4a-4ffa-8f65-f41e1dfcaf68/godot-cpp/include/godot_cpp/**"
+            ],
+            "defines": [],
+            "compilerPath": "/usr/bin/gcc",
+            "cStandard": "gnu17",
+            "intelliSenseMode": "linux-gcc-x64",
+            "cppStandard": "gnu++17"
+        }
+    ],
+    "version": 4
+}
