@@ -12,9 +12,8 @@ namespace goap
 
 	}
 
-	void FSM::push_state(FSMState state) {
+	void FSM::push_state(FSMState* state) {
 		state_stack.push(state);
-		
 	}
 
 	void FSM::pop_state() {
@@ -23,7 +22,8 @@ namespace goap
 
 	void FSM::update(Node* node) {
 		if ( state_stack.empty() ) {return;}
-		state_stack.top().update(this, node);
+		state_stack.top()->update(this, node);
+		
 	}
 
 	FSM::FSM() {

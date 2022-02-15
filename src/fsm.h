@@ -26,15 +26,16 @@ namespace goap
 
 	protected:
 		static void _bind_methods();
-		void push_state(FSMState state);
-		void pop_state();
+		
 
 	private:
-		std::stack<FSMState> state_stack;
+		std::stack<FSMState*> state_stack;
 		
 	public:
 		// FSMState create_state(StringName name);
 		void update(Node* node);
+		void push_state(FSMState* state);
+		void pop_state();
 		
 		FSM();
 		~FSM();

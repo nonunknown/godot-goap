@@ -17,6 +17,9 @@
 
 namespace goap
 {
+	typedef std::unordered_set<Ref<GoapAction>> action_hash;
+	typedef std::queue<Ref<GoapAction>> action_queue;
+
 	class GoapAgent : public Node {
 		GDCLASS(GoapAgent, Node);
 
@@ -27,12 +30,12 @@ namespace goap
 
 	private:
 
-		FSM state_machine;
+		Ref<FSM> state_machine;
 		FSMState state_idle, state_moveto, state_perform_action;
-		std::unordered_set<Ref<GoapAction>> available_actions;
-		std::queue<Ref<GoapAction>> current_actions;
-		IGoap data_provider;
-		GoapPlanner planner;
+		action_hash available_actions;
+		action_queue current_actions;
+		Ref<IGoap> data_provider;
+		Ref<GoapPlanner> planner;
 
 		void create_state_idle();
 		void create_state_moveto();

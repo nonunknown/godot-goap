@@ -10,6 +10,8 @@ namespace goap
 
 	}
 
+	
+
 	IGoap::IGoap() {
 		UtilityFunctions::print("Constructor.");
 	}

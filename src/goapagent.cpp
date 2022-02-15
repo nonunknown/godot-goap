@@ -13,21 +13,29 @@ namespace goap
 	}
 
 	void GoapAgent::start() {
-		state_machine = FSM();
-		available_actions = strob_map();
-		current_actions = std::queue<GoapAction>();
-		planner = GoapPlanner();
+		state_machine.instantiate();
+		planner.instantiate();
+
+		available_actions = {};
+		current_actions = {};
+
 		find_data_provider();
 		create_state_idle();
 		create_state_moveto();
 		create_state_perform_action();
-		state_machine.push_state(state_idle);
+
+		state_machine->push_state(&state_idle);
+
 		load_actions();
 	}
 
 	void GoapAgent::create_state_idle() {
-		state_idle.update = [](FSM* fsm, Node* node){
-			std::cout << "test";
+		Ref<IGoap> data = data_provider;
+
+		state_idle.update = [data](FSM* fsm, Node* node){
+			
+			// strob_map world_state = 
+
 		};
 	}
 
@@ -44,17 +52,23 @@ namespace goap
 	}
 
 	void GoapAgent::update() {
-		state_machine.update(this);
+		state_machine->update(this);
 	}
 
 	void GoapAgent::add_action(Ref<GoapAction> action) {
 		available_actions.insert(action);
 	}
 
-	Ref<GoapAction> GoapAgent::get_action()
+	//TODO: FINISH THIS
+	Ref<GoapAction> GoapAgent::get_action() {
+		return nullptr;
+	}
 
 
 	GoapAgent::GoapAgent() {
+		state_idle = FSMState();
+		state_moveto = FSMState();
+		state_perform_action = FSMState();
 		UtilityFunctions::print("Constructor.");
 	}
 
